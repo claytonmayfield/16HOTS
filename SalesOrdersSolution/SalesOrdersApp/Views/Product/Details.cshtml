@@ -1,0 +1,33 @@
+﻿@model Product
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<h1>Product Details</h1>
+<div class="row">
+    <div class="col-sm-4">
+
+        <img src="@Url.Content(@Model.ProductImage)"
+             alt="@Model.ProductName Image"
+        class="img-responsive center-block" />
+    </div>
+
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-6">
+        <h2>@Model.ProductName</h2>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>Description:</td>
+                <td>@Model.ProductDescLong</td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>@Model.ProductPrice.ToString("c")</td>
+            </tr>
+        </table>
+        <a asp-controller="Product" asp-action="LogIn"
+           asp-route-id="" class="btn btn-primary">Add to Cart</a>
+
+    </div>
+</div>
